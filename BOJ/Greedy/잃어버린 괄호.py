@@ -2,7 +2,7 @@
 #
 # +와 -가 번갈아서 나타나므로, 무조건 A-(B+C)-(D+E)와 같은 형태로
 # 괄호를 붙이면 최소값이 나오게 된다.
-#
+
 
 expression = input()
 pluses = expression.split('-')
