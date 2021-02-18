@@ -1,3 +1,12 @@
+# 3055 : 탈출
+#
+# 물 채우기 -> 고슴도치 이동을 하나의 'Step'으로 생각해야 한다.
+# 따라서 물의 좌표를 담는 Water-Queue, 고슴도치의 위치를 담는 Hog-Queue 각각을 선언해 따로 사용해야 한다.
+#
+# 각각의 Queue 내부에 원소가 더 이상 남아 있지 않을 때까지 하나씩 꺼내 다음 위치를 검토하고
+# 가능한 좌표는 임시 배열에 저장했다가, 마지막에 반복문이 종료될 때 Queue 에 추가 해야한다.
+
+
 from sys import stdin
 from collections import deque
 
