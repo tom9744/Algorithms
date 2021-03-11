@@ -34,14 +34,17 @@ def BFS():
     while queue:
         screen, clipboard = queue.popleft()
 
+        # 화면에서 클립보드로 복사
         if visited[screen][screen] == -1:
             visited[screen][screen] = visited[screen][clipboard] + 1
             queue.append((screen, screen))
 
+        # 클립보드에서 화면으로 복사
         if screen + clipboard < 1001 and visited[screen + clipboard][clipboard] == -1:
             visited[screen + clipboard][clipboard] = visited[screen][clipboard] + 1
             queue.append((screen + clipboard, clipboard))
 
+        # 화면에서 이모티콘 1개 제거
         if screen - 1 >= 0 and visited[screen - 1][clipboard] == -1:
             visited[screen - 1][clipboard] = visited[screen][clipboard] + 1
             queue.append((screen - 1, clipboard))
@@ -53,6 +56,7 @@ visited = [[-1] * 1001 for _ in range(1001)]
 BFS()
 
 result = maxsize
+# 화면에 있는 이모티콘이 S개인 모든 경우 중, 방문 기록이 있는 것들의 최소값을 찾는다.
 for index in range(1, S):
     if visited[S][index] != -1:
         result = min(result, visited[S][index])
