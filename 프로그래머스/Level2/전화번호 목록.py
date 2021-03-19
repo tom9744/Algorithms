@@ -1,4 +1,4 @@
-# 코딩테스트 연습 > 해시 > 다리를 지나는 트럭 (Level2)
+# 코딩테스트 연습 > 해시 > 전화번호 목록 (Level2)
 def solution(phone_book):
     # 람다식을 이용해, 전화번호부를 1) 알파벳 순, 2) 길이 순으로 정렬한다.
     phone_book.sort(key=lambda elem: [elem, len(elem)])
