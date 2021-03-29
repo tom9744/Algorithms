@@ -1,4 +1,8 @@
 function solution(n) {
+    if (n === 0) {
+        return 0;
+    }
+    
     const numbers = [];
     
     for (let num = 1; num < n + 1; num++) {
