@@ -1,4 +1,5 @@
-function maxSubarraySum(array, windowSize) {
+/* 나의 풀이 (Sliding Window 사용 X) - O(N^2) */
+function myMaxSubarraySum(array, windowSize) {
   // 0. 윈도우 크기가 배멸의 길이보다 크다면, null을 반환한다.
   if (array.length < windowSize) {
     return null;
@@ -20,6 +21,29 @@ function maxSubarraySum(array, windowSize) {
   }
 
   return maxVal;
+}
+
+/* 답안 풀이 (Sliding Window 사용) - O(N) */
+function maxSubarraySum(array, windowSize) {
+  // 0. 윈도우 크기가 배멸의 길이보다 크다면, null을 반환한다.
+  if (array.length < windowSize) {
+    return null;
+  }
+
+  // 1. 윈도우에 가장 먼저 포함된 요소들의 합을 구한다.
+  let maxSum = array.slice(0, windowSize).reduce((acc, curr) => acc + curr, 0);
+  let tempSum = maxSum;
+
+  // 2. 윈도우의 맨앞, 맨뒤 요소만 바꿔가면서 요소들의 합을 구한다.
+  for (let index = windowSize; index < array.length; index++) {
+    const prev = array[index - windowSize];
+    const next = array[index];
+    tempSum = tempSum - prev + next;
+
+    maxSum = Math.max(maxSum, tempSum);
+  }
+
+  return maxSum;
 }
 
 maxSubarraySum([2, 6, 3, 2, 1, 2, 4], 3); // 11
