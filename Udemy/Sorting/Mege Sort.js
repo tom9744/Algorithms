@@ -26,7 +26,7 @@ function merge(sortedArrayA, sortedArrayB) {
     return mergedArray;
 }
 
-// Best/Avg/Worst: O(NlogN)
+// Best/Avg/Worst: O(NlogN), Decomposition - O(logN), Merging - O(N)
 function mergeSort(array) {
     // 배열 길이가 0 또는 1이면, 배열 자체를 반환해 재귀호출을 끝낸다.
     if (array.length <= 1) {
@@ -34,7 +34,7 @@ function mergeSort(array) {
     }    
 
     const middle = Math.floor(array.length / 2);
-    // 왼쪽, 오른쪽 절반에 대해 mergeSort를 재귀호출한다.
+    // 왼쪽, 오른쪽 절반에 대해 mergeSort를 재귀호출한다. - O(logN)
     const left = mergeSort(array.slice(0, middle)); 
     const right = mergeSort(array.slice(middle));
 
