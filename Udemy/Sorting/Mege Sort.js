@@ -1,3 +1,4 @@
+// Time Complexity is O(m + n), where m and n are the lengths of arrays.
 function merge(sortedArrayA, sortedArrayB) {
     const mergedArray = [];
     
