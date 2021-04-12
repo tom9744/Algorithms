@@ -4,6 +4,7 @@ function swap(array, indexA, indexB) {
     array[indexB] = temp;
 }
 
+// Best/Avg/Worst: O(N^2)
 function selectionSort(array) {
     // 1. 배열의 맨 앞부터 요소를 선택한다.
     for (let i = 0; i < array.length; i++) {
