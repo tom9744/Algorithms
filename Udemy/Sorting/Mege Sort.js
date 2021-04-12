@@ -26,6 +26,7 @@ function merge(sortedArrayA, sortedArrayB) {
     return mergedArray;
 }
 
+// Best/Avg/Worst: O(NlogN)
 function mergeSort(array) {
     // 배열 길이가 0 또는 1이면, 배열 자체를 반환해 재귀호출을 끝낸다.
     if (array.length <= 1) {
