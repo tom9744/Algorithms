@@ -4,7 +4,7 @@ function swap(array, indexA, indexB) {
     array[indexB] = temp;
 }
 
-// Best: O(N), Avg/Worst: O(N^2)
+// Best/Avg/Worst: O(N^2)
 function bubbleSort(array) {
     for (let i = array.length - 1; i > 0; i--) {
         for (let j = 0; j < i; j++) {
