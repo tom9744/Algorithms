@@ -5,6 +5,14 @@ class Node {
     }
 }
 
+/**
+ * Insertion: O(1)
+ * Removal: O(1) ~ O(N)
+ * Searching: O(N)
+ * Access: O(N)
+ * 
+ * 데이터에 대한 접근/수정보다 추가/삭제가 많을 경우, 배열(Array)에 비해 유리하다.
+ */
 class SinglyLinkedList {
     constructor() {
         this.head = null;
@@ -12,6 +20,7 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
+    // O(1)
     push(value) {
         // 1. 새로운 노드를 생성한다.
         const newNode = new Node(value);
@@ -33,6 +42,7 @@ class SinglyLinkedList {
         return this;
     }
 
+    // O(N) - 삭제할 마지막 노드 바로 앞의 노드를 Tail로 설정해야 한다.
     pop() {
         // 1. 리스트가 비어있는 경우, undefined를 반환한다.
         if (this.length === 0) return;
@@ -61,6 +71,7 @@ class SinglyLinkedList {
         return current;
     }
 
+    // O(1)
     shift() {
         // 1. 리스트가 비어있는 경우, undefined를 반환한다.
         if (this.head === null) return;
@@ -81,6 +92,7 @@ class SinglyLinkedList {
         return currentHead;
     }
 
+    // O(1)
     unshift(value) {
         // 1. 새로운 노드를 생성한다.
         const newNode = new Node(value);
@@ -104,6 +116,7 @@ class SinglyLinkedList {
         return this;
     }
 
+    // O(N)
     get(position) {
         // 1. 주어진 위치값이 범위를 벗어나는 경우 null을 반환한다.
         if (position < 0 || position >= this.length) return null;
@@ -121,6 +134,7 @@ class SinglyLinkedList {
         return current;
     }
 
+    // O(N)
     set(value, position) {
         // 1. get() 메서드를 사용해 노드를 가져온다.
         const foundNode = this.get(position);
@@ -136,6 +150,7 @@ class SinglyLinkedList {
         }
     }
 
+    // O(N)
     insert(value, position) {
         // 1. 삽입할 위치가 범위를 벗어나는 경우, false를 반환한다.
         if (position < 0 || position >= this.length) return false;
@@ -157,6 +172,7 @@ class SinglyLinkedList {
         return true;
     }
 
+    // O(N)
     remove(position) {
         // 1. 삭제할 위치가 범위를 벗어나는 경우, undefined를 반환한다.
         if (position < 0 || position >= this.length) return;
