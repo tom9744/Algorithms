@@ -177,12 +177,29 @@ class SinglyLinkedList {
         
         return targetNode;
     }
+
+    reverse() {
+        // 1. Head와 Tail을 바꾼다.
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        // 2. 현재 Node의 이전 노드와 다음 노드를 저장할 변수를 선언한다.
+        let prevNode = null;
+        let nextNode;
+
+        for (let idx = 0; idx < this.length; i++) {
+            // 3. 현재 노드의 다음 노드를 nextNode 변수에 저장한다.
+            nextNode = node.next;
+           
+            // 4. 현재 노드의 다음 노드를 이전 노드로 변경한다.
+            node.next = prevNode;            
+
+            // 5. 다음 노드 처리를 위해 한 칸 이동한다.
+            prevNode = node;
+            node = nextNode;
+        }
+
+        return this;
+    }
 }
-
-const list = new SinglyLinkedList();
-list.push(2);
-list.push(4);
-list.push(6);
-list.push(8);
-
-list.get(3);
