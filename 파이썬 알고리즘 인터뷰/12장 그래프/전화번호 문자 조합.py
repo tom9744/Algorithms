@@ -1,5 +1,8 @@
 class Solution:
+    # 책의 풀이 (Runtime: 32ms, Memory: 14.4MB)
     def letterCombinations(self, digits: str) -> List[str]:
+        if not digits:
+            return []
         
         result = []
         keys = {
