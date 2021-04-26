@@ -1,4 +1,4 @@
-// 책의 풀이 (Runtime: 32ms, Memory: 14.4MB)
+// 책의 풀이 (Runtime: 80ms, Memory: 38.3MB)
 const letterCombinations = function(digits) {
   if (!digits) return [];
   
