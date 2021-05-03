@@ -25,3 +25,5 @@ for target in target_locations:
     circular_queue.popleft()  # 큐의 맨 앞에 위치하게 된 목표 원소를 제거한다.
 
 print(result)
+
+
