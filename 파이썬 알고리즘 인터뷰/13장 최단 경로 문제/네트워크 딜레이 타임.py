@@ -19,7 +19,7 @@ class Solution:
             time, vertex = heapq.heappop(priority_queue)
 
             # 현 정점이 최단 거리 딕셔너리에 존재하지 않는 경우,
-            if not vertex in distance:
+            if vertex not in distance:
                 # 최단 거리 딕셔너리에 추가한다.
                 distance[vertex] = time
                 # 인접한 정점까지의 거리를 구하고, 우선순위 큐에 삽입한다.
