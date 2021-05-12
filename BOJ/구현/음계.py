@@ -1,19 +1,19 @@
-scale = map(int, input().split())
+scale = list(map(int, input().split()))
+prev = scale[0]
 
-start = scale[0]
-
-if start == 0:
+if prev == 1:
     for _, sound in enumerate(scale, 1):
-        if abs(start - sound) > 1:
+        if abs(prev - sound) > 1:
             print("mixed")
-            return
+            exit(0)
+        prev = sound
     print("ascending")
-    return
-
-elif start == 8:
+elif scale[0] == 8:
     for _, sound in enumerate(scale, 1):
-        if abs(start - sound) > 1:
+        if abs(prev - sound) > 1:
             print("mixed")
-            return
+            exit(0)
+        prev = sound
     print("descending")
-    return
+else:
+    print("mixed")
