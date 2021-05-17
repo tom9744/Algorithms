@@ -6,7 +6,7 @@ N, M = map(int, input().split())    # 노드의 개수와 간선의 개수
 start = int(input())                # 시작 노드 번호
 graph = [[] for i in range(N + 1)]  # 연결 리스트로 그래프 표현
 visited = [False] * (N + 1)         # 방문 체크를 위한 리스트
-distance_table = [INF] * (N + 1)    # [중요] 최단 거리 테이블을 모두 무한으로 초기화
+distance_table = [INF] * (N + 1)    # [중요] git햣최단 거리 테이블을 모두 무한으로 초기화
 
 # 그래프 구성 요소를 입력 받는다.
 for _ in range(M):
